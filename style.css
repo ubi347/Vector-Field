@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    height: 100vh; /* Full height of the screen */
+}
+
+#inputDiv {
+    padding: 10px;
+    flex-grow: 1; /* Takes up the remaining space */
+    background-color: white; /* Just for visualization */
+    border-right: 2px #2b2b2b solid;
+}
+
+#canvasDiv {
+    width: 800px;  /* Fixed width */
+    height: 480px; /* Fixed height */
+    background-color: #2b2b2b; /* Just for visualization */
+}
+
+.textarea {
+    min-height: 10px;
+    max-height: 300px; /* Set a max height to prevent excessive growth */
+    overflow-y: hidden; /* Hide scrollbar while expanding */
+    resize:vertical; /* Prevent manual resizing */
+    padding: 8px;
+    font-size: 16px;
+  }
