@@ -79,12 +79,12 @@ export class UserInterface{
         this.app.canvas.addEventListener('wheel', (event) => {
             if(event.deltaY>0){
                 this.display.unitToPixel /= 2;
-                this.display.unitIntervals *= 2;
+                this.display.unitIntervals /= 2;
                 let cursorAnchorPosition = Vector.VectorScale(Vector.Sub(this.mousePosition, this.display.halfScreen),new Vector(1,-1));
                 this.display.TranslateOrigin(Vector.Scale(Vector.Sub(cursorAnchorPosition, this.display.originTranslationVector),0.5));
             }if(event.deltaY<0){
                 this.display.unitToPixel *= 2;
-                this.display.unitIntervals /= 2;
+                this.display.unitIntervals *= 2;
                 let cursorAnchorPosition = Vector.VectorScale(Vector.Sub(this.mousePosition, this.display.halfScreen),new Vector(1,-1));
                 this.display.TranslateOrigin(Vector.Sub(this.display.originTranslationVector, cursorAnchorPosition));
             }
