@@ -163,14 +163,14 @@ export class FluidParticle{
 
 
     //TODO
-    private RKFour(){
+    // private RKFour(){
 
-    }
+    // }
 
-    private eular(speed: number){
+    // private eular(speed: number){
 
 
-    }
+    // }
 
     
 

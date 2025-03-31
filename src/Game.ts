@@ -9,13 +9,11 @@ export class Game{
     private app: Application;
     private graphics: Graphics;
     private display: Display;
-    private userInterface: UserInterface;
 
-    constructor(_app: Application, _graphics: Graphics, _display: Display, _userInterface: UserInterface){
+    constructor(_app: Application, _graphics: Graphics, _display: Display){
         this.app = _app;
         this.graphics = _graphics;
         this.display = _display;
-        this.userInterface = _userInterface;
 
         // Append the application canvas to the document body
         document.getElementById('canvasElement')?.appendChild(this.app.canvas);
@@ -45,10 +43,9 @@ export class Game{
         const app = new Application();
         await app.init({width: display.screenWidth, height: display.screenHeight, background: '#ffffff', sharedTicker: true, antialias:true});
         //Initialize UserInterface
-        UserInterface.Initialize(app)
-        const userInterface = UserInterface.Instance
+        UserInterface.Initialize(app);
         
-        this.instance = new Game(app, graphics, display, userInterface)
+        this.instance = new Game(app, graphics, display)
     }
     
     private Update = (deltaTime:number)=>{ //deltaTime in seconds
